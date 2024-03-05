@@ -1,3 +1,115 @@
-body { background-color: blueviolet;
+/*Google fonts import*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&family=Italiana:wght@200;300;400;500;600;700&display=swap');
+
+/* css to remove any default vertical white space from bootstrap classes */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-color: #FFE6E8;
+}
+
+
+/*--------------------------------------------------------------------------------Navbar*/
+
+div.container-fluid.navalert-container {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}   
+
+.navalert-container {
+    display: inline-flex;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+
+.navalert-container h1 {
+    font-family: "Italiana", sans-serif;
+    width: 30%;
+    color: #ffe6e8;
+}
+
+.navbar {
+    margin: 0;
+    border: 0;
+    width: 100%;
+    background-color: rgba(113, 6, 39);
+}
+
+.navbar .navbar-toggler {
+    border: 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.active {
+    border-bottom: 1px solid #ffe6e8;
+}
+
+.test {
+    height: 200px;
+    width: 50%;
+    background-color: powderblue;
+  }
+
+/*--------------------------------------------------------------------------------Footer*/
+
+footer {
+    background-color: #710627;
+    color: #ffe6e8;
+    min-height: 120px;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 7px;
+    text-align: center;
+    color: #ffe6e8;
+    background-color: #710627;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background: #7d8491;
+    color: #d6ffb7;
+}
+
+#footer-details {
+    padding-top: 20px;
+}
+
+/*--------------------------------------------------------------------------------media query for mobile */
+
+@media screen and (max-width: 446px) {
+
+    .navalert-container h1 {
+        font-family: "Italiana", sans-serif;
+        font-size: 1.5rem;
+    }
 
 }
