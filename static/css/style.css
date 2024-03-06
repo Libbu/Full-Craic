@@ -77,6 +77,11 @@ div.container-fluid.navalert-container {
     background-color: #188181;
 }
 
+.scale {
+    width: 100%;
+    height: auto;
+}
+
 .author {
     color: white;
     margin: 4px;

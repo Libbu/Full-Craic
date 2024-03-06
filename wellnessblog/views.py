@@ -13,15 +13,14 @@ class SessionList(generic.ListView):
     template_name = "wellnessblog/index.html"
     paginate_by = 6
     
-
+def session_detail(request, slug):
+    queryset = Session.objects.filter(status=1)
+    session = get_object_or_404(queryset, slug=slug)
+    return render(request, "wellnessblog/session_detail.html", {'session': session},)
 
 def user_profile_detail(request, user_profile_id):
     user_profile = get_object_or_404(UserProfile, pk=user_profile_id)
     return render(request, 'user_profile_detail.html', {'user_profile': user_profile})
-
-def session_detail(request, session_id):
-    session = get_object_or_404(Session, pk=session_id)
-    return render(request, 'session_detail.html', {'session': session})
 
 def create_user_profile(request):
     if request.method == 'POST':
