@@ -3,7 +3,9 @@ from django.views import generic
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Session, Comment, UserProfile
-#from .forms import UserProfileForm, SessionForm
+from .forms import CommentForm
+
+#from .forms import CommentForm
 
 # Create your views here.
 
@@ -14,12 +16,16 @@ class SessionList(generic.ListView):
     paginate_by = 6
     
 def session_detail(request, slug):
+
     queryset = Session.objects.filter(status=1)
     session = get_object_or_404(queryset, slug=slug)
+
     comments = session.comments.all().order_by("-created_on")
     comment_count = session.comments.filter(approved=True).count()
-    star_rating = session.comments.stars
-    return render(request, "wellnessblog/session_detail.html", {'session': session, "comments": comments, "comment_count": comment_count, "comment_stars": comment_stars},)
+    comment_form = CommentForm()
+   
+   
+    return render(request, "wellnessblog/session_detail.html", {'session': session, "comments": comments, "comment_count": comment_count, "comment_form": comment_form},)
 
 def user_profile_detail(request, user_profile_id):
     user_profile = get_object_or_404(UserProfile, pk=user_profile_id)

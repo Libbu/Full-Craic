@@ -45,8 +45,8 @@ class Session(models.Model):
         User, on_delete=models.CASCADE, related_name="sessions_provider"
     )
     image = CloudinaryField('image', default='placeholder')
-    about = models.TextField()
-    location = models.CharField(max_length=200, blank=True)
+    about = models.TextField(editable=True)
+    location = models.CharField(max_length=200, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     session_date_time = models.DateTimeField(blank=True, null=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -54,7 +54,7 @@ class Session(models.Model):
     participants = models.ManyToManyField(
         UserProfile, related_name='attended_sessions', blank=True
     )
-    keywords = models.CharField(max_length=200, blank=True)
+    keywords = models.CharField(max_length=200, blank=True, null=True)
     status = models.IntegerField(choices=STATUS, default=0)
     
     class Meta:
@@ -70,7 +70,7 @@ class Comment(models.Model):
     regarding a single session related to :model:`Session`.
     """
     session = models.ForeignKey(
-        Session, on_delete=models.CASCADE, related_name="session"
+        Session, on_delete=models.CASCADE, related_name="comments"
     )
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_comment"
