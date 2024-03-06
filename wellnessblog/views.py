@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Session, Comment, UserProfile
 from .forms import CommentForm
 
-#from .forms import CommentForm
 
 # Create your views here.
 
@@ -22,8 +22,19 @@ def session_detail(request, slug):
 
     comments = session.comments.all().order_by("-created_on")
     comment_count = session.comments.filter(approved=True).count()
-    comment_form = CommentForm()
-   
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.post = session
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Your comment is awaiting approval'
+             )
+
+    comment_form = CommentForm()    
    
     return render(request, "wellnessblog/session_detail.html", {'session': session, "comments": comments, "comment_count": comment_count, "comment_form": comment_form},)
 
