@@ -38,7 +38,7 @@ class Session(models.Model):
     """
     name = models.CharField(max_length=200, unique=True)
     provider = models.ForeignKey(
-        UserProfile, on_delete=models.CASCADE, related_name="sessions_provided"
+        User, on_delete=models.CASCADE, related_name="sessions_provided"
     )
     image = CloudinaryField('image', default='placeholder')
     about = models.TextField()
