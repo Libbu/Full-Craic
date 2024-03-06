@@ -34,11 +34,11 @@ class UserProfile(models.Model):
 
 class Session(models.Model):
     """
-    Stores a single session entry related to :model:`auth.UserProfile`.
+    Stores a single session entry related to :model:`UserProfile`.
     """
     name = models.CharField(max_length=200, unique=True)
     provider = models.ForeignKey(
-        UserProfile, on_delete=models.CASCADE, related_name="sessions_provided"
+        UserProfile, on_delete=models.CASCADE, related_name="sessions_provider"
     )
     image = CloudinaryField('image', default='placeholder')
     about = models.TextField()
@@ -57,3 +57,25 @@ class Session(models.Model):
         
     def __str__(self):
         return f"Session:{self.name} | provided by {self.provider}"
+
+
+class Comment(models.Model):
+    """
+    Stores a comment and feedback from a user related to :model:`UserProfile`
+    regarding a single session related to :model:`Session`.
+    """
+    session = models.ForeignKey(
+        Session, on_delete=models.CASCADE, related_name="session"
+    )
+    user = models.ForeignKey(
+        UserProfile, on_delete=models.CASCADE, related_name="user_comment"
+    )
+    created_on = models.DateTimeField(auto_now_add=True)
+    comment_body = models.TextField()
+    stars = models.IntegerField(choices=[(i, i) for i in range(1, 12)])  # Restrict to values 1 to 11 = 0 - 5 stars in half-star increments
+
+    class Meta:
+        ordering = ["-created_on"]
+        
+    def __str__(self):
+        return f"Comment by {self.user} on {self.session}"
