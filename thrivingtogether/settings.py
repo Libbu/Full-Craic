@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'wellnessblog',
+    'django_summernote',
+    'cloudinary',
+
 ]
 
 #tells allauth what page to redirect to on login and logout (homepage)

@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.views import generic
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import UserProfile, Session
@@ -8,6 +9,26 @@ from .models import UserProfile, Session
 
 def index(request):
     return render(request, 'wellnessblog/index.html')
+
+class SessionList(generic.ListView):
+    """
+    Returns all published posts in :model:`wellnessblog.Sessions`
+    and displays them in a page of three posts. 
+    **Context**
+
+    ``queryset``
+        All published instances of :model:`blog.Post`
+    ``paginate_by``
+        Number of posts per page.
+        
+    **Template:**
+
+    :template:`wellnessblog/index.html`
+    """
+    queryset = Session.objects.filter(status=1)
+    template_name = "wellnessblog/index.html"
+    paginate_by = 3
+
 
 def user_profile_detail(request, user_profile_id):
     user_profile = get_object_or_404(UserProfile, pk=user_profile_id)
