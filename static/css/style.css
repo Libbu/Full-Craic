@@ -67,7 +67,7 @@ footer {
     background-color: #710627;
     color: #ffe6e8;
     min-height: 120px;
-    margin: 0;
+    margin-top: 179px;
 }
 
 .social-links {
@@ -102,6 +102,106 @@ footer {
 #footer-details {
     padding-top: 20px;
 }
+
+/*--------------------------------------------------------------- Form Style.CSS */
+
+/* Form Styles */
+form.signup {
+    background-color: #ecdbdb; /* Set background color for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+}
+
+/* Form Field Styles */
+form.signup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333; /* Set label color */
+}
+
+form.signup input[type="text"],
+form.signup input[type="email"],
+form.signup input[type="password"],
+form.signup select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Customize the Submit Button */
+form.signup button {
+    background-color: #710627;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+form.signup button:hover {
+    background-color: #4d041a;
+}
+
+/* Style for Error Messages (if any) */
+form.signup .errorlist {
+    color: #ff0000;
+    margin: 0 0 10px;
+}
+
+/* Additional Styling for Specific Fields */
+form.signup #id_image {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+form.signup #id_user_type,
+form.signup #id_session_type {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+    form.signup {
+        max-width: 100%; /* Adjust the width for smaller screens */
+    }
+
+    form.signup button {
+        width: 100%; /* Make the button full-width on small screens */
+    }
+
+    /* Responsive Styles for Image and Dropdowns */
+    form.signup #id_image,
+    form.signup #id_user_type,
+    form.signup #id_session_type {
+        box-sizing: border-box;
+    }
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+    form.signup {
+        max-width: 100%; /* Adjust the width for smaller screens */
+    }
+
+    form.signup button {
+        width: 100%; /* Make the button full-width on small screens */
+    }
+}
+
+
+
+
 
 /*--------------------------------------------------------------------------------media query for mobile */
 
