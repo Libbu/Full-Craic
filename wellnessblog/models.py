@@ -22,7 +22,7 @@ class UserProfile(models.Model):
         (INSTRUCTOR, "Instructor"),
         (FOOD_VENDOR, "Food Vendor"),
     )
-    user_role = models.CharField(max_length=3, choices=ROLE_CHOICES)
+    user_role = models.CharField(max_length=300, choices=ROLE_CHOICES)
     username = models.CharField(max_length=200, unique=True)
     firstname = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
