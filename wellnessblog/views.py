@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import UserProfile, Session
+from .models import Session, Comment, UserProfile
 #from .forms import UserProfileForm, SessionForm
 
 # Create your views here.
@@ -16,7 +16,10 @@ class SessionList(generic.ListView):
 def session_detail(request, slug):
     queryset = Session.objects.filter(status=1)
     session = get_object_or_404(queryset, slug=slug)
-    return render(request, "wellnessblog/session_detail.html", {'session': session},)
+    comments = session.comments.all().order_by("-created_on")
+    comment_count = session.comments.filter(approved=True).count()
+    star_rating = session.comments.stars
+    return render(request, "wellnessblog/session_detail.html", {'session': session, "comments": comments, "comment_count": comment_count, "comment_stars": comment_stars},)
 
 def user_profile_detail(request, user_profile_id):
     user_profile = get_object_or_404(UserProfile, pk=user_profile_id)
