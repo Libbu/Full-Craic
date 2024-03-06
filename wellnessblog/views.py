@@ -1,21 +1,35 @@
 from django.shortcuts import render, get_object_or_404
+from django.views import generic
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import UserProfile, Session
-#from .forms import UserProfileForm, SessionForm
+from .models import Session, Comment, UserProfile
+from .forms import CommentForm
+
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'wellnessblog/index.html')
+class SessionList(generic.ListView):
+  
+    queryset = Session.objects.filter(status=1)
+    template_name = "wellnessblog/index.html"
+    paginate_by = 6
+    
+def session_detail(request, slug):
+
+    queryset = Session.objects.filter(status=1)
+    session = get_object_or_404(queryset, slug=slug)
+
+    comments = session.comments.all().order_by("-created_on")
+    comment_count = session.comments.filter(approved=True).count()
+
+    comment_form = CommentForm()    
+   
+    return render(request, "wellnessblog/session_detail.html", {'session': session, "comments": comments, "comment_count": comment_count, "comment_form": comment_form},)
 
 def user_profile_detail(request, user_profile_id):
     user_profile = get_object_or_404(UserProfile, pk=user_profile_id)
     return render(request, 'user_profile_detail.html', {'user_profile': user_profile})
-
-def session_detail(request, session_id):
-    session = get_object_or_404(Session, pk=session_id)
-    return render(request, 'session_detail.html', {'session': session})
 
 def create_user_profile(request):
     if request.method == 'POST':
