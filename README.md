@@ -6,7 +6,7 @@ The intended consumers of the information in this resource are students, whilst 
 
 The website features three sections: The home page takes users to posts on the subjects of wellness, the primary driver behind the initiative. A seperate food section features information available concerning healthy food in the immediate vicinity. A profiles session lists information about site contributors so that users can get to know those responsible for the site content and their background. 
 
-![Landing Page](https://https://github.com/Libbu/Full-Craic/blob/main/media/cleanlanding.jpg)
+![Landing Page](https://github.com/Libbu/Full-Craic/blob/main/media/cleanlanding.jpg)
 
 
 ## UX
@@ -109,7 +109,7 @@ IMAGE OF BLOG POST CARDS
 
   - These sections are valuable, therefore registration is possible with minimal fuss, and forms are styled to reflect our wellness aesthetic.
 
-![Registration](https://github.com/Libbu/CyberPixels/blob/main/media/destthai.png)
+![Registration](https://github.com/Libbu/Full-Craic/blob/main/media/regform.JPG)
 ![Signin](https://github.com/Libbu/Full-Craic/blob/main/media/login.JPG)
 ![Signout](https://github.com/Libbu/Full-Craic/blob/main/media/signoutbutton.JPG)
 
@@ -131,27 +131,37 @@ PICTURE OF AN ACTUAL POST HERE
 
 - __Desktop Landing Page__
 
-LOWFIDLANDING
+![Low Fi Landing](https://github.com/Libbu/Full-Craic/blob/main/media/lowfidlandpage.png) 
 
 - __Desktop Post/Session Detail__
 
-LOWFIDBLOGPOST
+![Low Fi BlogPost](https://github.com/Libbu/Full-Craic/blob/main/media/lowfidblogpost.png) 
 
 - __Registration Form__
 
-LOWFIDSIGNUP
+![Low Fi Registration](https://github.com/Libbu/Full-Craic/blob/main/media/lowfidsignup.png) 
 
 - __Home Page Mobile View__
 
+![Low Fi LandingMob](https://github.com/Libbu/Full-Craic/blob/main/media/lowfidlandmob.png) 
+
 - __Post/Session Detail Mobile View__
 
+![Low Fi Post detail Mob](https://github.com/Libbu/Full-Craic/blob/main/media/lowfidsessionmob.png) 
+
 - __Registration Form Mobile View__
+
+![Low Fi Registration](https://github.com/Libbu/Full-Craic/blob/main/media/lowfidsignup.png) 
 
 ### High Fidelity Wireframes
 
 - __Desktop Landing Page__
 
+![High Fi Landing](https://github.com/Libbu/Full-Craic/blob/main/media/hifidland.png) 
+
 - __Desktop Post/Session Detail__
+
+![High Fi Landing](https://github.com/Libbu/Full-Craic/blob/main/media/highfiddetailpost.png) 
 
 - __Registration Form__
 
@@ -221,8 +231,8 @@ Unless otherwise noted all code and content is the work of Team Full Craic as pa
 ### Team Full Craic:
 
 - Elizabeth Spivey: Team Lead, Agile Project Management, Django configuration, Front-End and Back-End Development
-- James Price: Database development Lead, Front-End and Back-End Development
-- Tyrel Morant: Front-End Development and UX/UI Implementation Lead
+- James Price: Database development Lead, Front-End and Back-End Development, UX
+- Tyrel Morant: Front-End Development, UX/UI Implementation Lead
 - Esther Njoku: UX/UI Design and Wireframing Lead
 
 
