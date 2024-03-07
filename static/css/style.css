@@ -147,9 +147,9 @@ div.container-fluid.navalert-container {
     font-size: 25px;
   }
   
-  .checked {
+.checked {
     color: goldenrod;
-  }
+}
 
 /* Footer */
 footer {

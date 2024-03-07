@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from .models import Session, Comment, UserProfile
 from .forms import CommentForm
@@ -64,3 +66,19 @@ def create_session(request):
     else:
         form = SessionForm()
     return render(request, 'create_session.html', {'form': form})
+
+# @csrf_exempt  # For simplicity, you can remove this decorator if you're using CSRF protection
+def update_rating(request):
+    if request.method == 'POST' and request.is_ajax():
+        rating = request.POST.get('rating')  # Assuming rating is sent as POST data
+        comment_id = request.POST.get('comment_id')  # Assuming you also send comment_id to identify the comment
+        
+        try:
+            comment = Comment.objects.get(pk=comment_id)
+            comment.stars = rating
+            comment.save()
+            return JsonResponse({'message': 'Rating updated successfully'})
+        except Comment.DoesNotExist:
+            return JsonResponse({'error': 'Comment not found'}, status=404)
+    else:
+        return JsonResponse({'error': 'Invalid request'}, status=400)
