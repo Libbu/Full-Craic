@@ -2,6 +2,7 @@
 
 {% url 'home' as home_url %}
 {% url 'foodblog' as food_url %}
+{% url 'profiles' as profile_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -36,8 +37,8 @@
                             aria-current="page{% endif %}" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item ml-2"><a class="nav-link {% if request.path == food_url %}active"
                             aria-current="page{% endif %}" href="{% url 'foodblog' %}">Food</a></li>
-                    <li class="nav-item ml-2"> <a class="nav-link {% if request.path == about_url %}active"
-                            aria-current="page{% endif %}" href="">Meet the Team</a></li>
+                    <li class="nav-item ml-2"> <a class="nav-link {% if request.path == profile_url %}active"
+                            aria-current="page{% endif %}" href="{% url 'profiles' %}">Meet the Team</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"

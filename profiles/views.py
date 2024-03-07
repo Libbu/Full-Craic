@@ -8,9 +8,9 @@ from .models import Profile
 class ProfileList(generic.ListView):
   
     queryset = Profile.objects.filter(status=1)
-    template_name = "###"
+    template_name = "profiles/profiles_landingpage.html"
     paginate_by = 6
 
-def profile_detail(request, profile_id):
-    profile = get_object_or_404(Profile, pk=profile_id)
+def profile_detail(request, firstname):
+    profile = get_object_or_404(Profile, firstname=firstname)
     return render(request, 'profile_detail.html', {'profile': profile})
