@@ -8,13 +8,11 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ session.name }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ session.provider }} | {{ session.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/default.JPG' %}" class="scale" alt="placeholder">
+                <img src="{% static 'images/loveyourself.jpg' %}" class="scale" alt="placeholder">
             </div>
         </div>
     </div>
@@ -22,20 +20,18 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4 mt-3 left top">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
                     {{ session.about | safe }}
                 </p>
-                <p> Location: {{session.location | safe }}</p>
-                <p> Time: {{session.session_date_time}}</p>
-                <p> Max-Participants: {{session.max_participants}}</p>
+                <p> Location: {{ session.location | safe }}</p>
+                <p> Time: {{ session.session_date_time }}</p>
+                <p> Max-Participants: {{ session.max_participants }}</p>
             </div>
         </div>
     </div>
-    <!-- Displaying count of comments -->
+
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
@@ -46,37 +42,28 @@
             <hr>
         </div>
     </div>
-    <!-- Displaying Comments -->
+
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-8 card mb-4 mt-3">
             <h3>Comments:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags
-          to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div class="p-2 comments
-          {% if not comment.approved and comment.author == user %}
-          faded{% elif not comment.approved %} d-none{% endif %}">
+                <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %}d-none{% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.author }}
-                        <span class="font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
+                        <span class="font-weight-normal">{{ comment.created_on }} wrote:</span>
                     </p>
                     <div id="comment{{ comment.id }}">
                         {{ comment.comment_body | linebreaks }}
                     </div>
                     {% if not comment.approved and comment.author == user %}
-                    <p class="approval">
-                        This comment is awaiting approval
-                    </p>
+                    <p class="approval">This comment is awaiting approval</p>
                     {% endif %}
                 </div>
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
-        <!-- Creating New Comments -->
+
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
                 {% if user.is_authenticated %}
