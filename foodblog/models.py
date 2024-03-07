@@ -11,7 +11,7 @@ class FoodOffering(models.Model):
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     provider = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="sessions_provider"
+        User, on_delete=models.CASCADE, related_name="food_offering_provider"
     )
     image = CloudinaryField('image', default='placeholder')
     about = models.TextField(editable=True)
@@ -34,10 +34,10 @@ class FoodComment(models.Model):
     regarding a food event related to :model:`Session`.
     """
     food_blog = models.ForeignKey(
-        FoodOffering, on_delete=models.CASCADE, related_name="comments"
+        FoodOffering, on_delete=models.CASCADE, related_name="food_comments"
     )
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="user_comment"
+        User, on_delete=models.CASCADE, related_name="user_food_comment"
     )
     created_on = models.DateTimeField(auto_now_add=True)
     comment_body = models.TextField()

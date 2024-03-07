@@ -9,7 +9,7 @@ class Profile(models.Model):
     Stores admin data for presentation.
     """
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="user_profile"
+        User, on_delete=models.CASCADE, related_name="profile"
     )
     firstname = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
