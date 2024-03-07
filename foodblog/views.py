@@ -23,12 +23,11 @@ def food_offering_detail(request, slug):
     comments = food_offering.food_comments.all().order_by("-created_on")
     comment_count = food_offering.food_comments.filter(approved=True).count()
 
-    #WORKING
+    #not WORKING
     if request.method == "POST":
         comment_form = FoodCommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            # commment.user not comment.author
             comment.user = request.user
             comment.food_offering = food_offering
             comment.save()

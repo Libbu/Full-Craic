@@ -9,7 +9,6 @@ The website features three sections: The home page takes users to posts on the s
 Landing Page:
 
 
-LANDING PAGE IMAGE HERE
 
 ## UX
 
