@@ -32,6 +32,10 @@ def session_detail(request, slug):
             comment.user = request.user
             comment.session = session
             comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval'
+            )
 
     comment_form = CommentForm()    
    
