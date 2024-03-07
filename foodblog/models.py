@@ -22,7 +22,7 @@ class FoodOffering(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     
     class Meta:
-        ordering = ["-session_date_time"]
+        ordering = ["-created_on"]
         
     def __str__(self):
         return f"FoodOffering:{self.name} | provided by {self.provider}"
