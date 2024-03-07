@@ -9,9 +9,9 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ NEED MODEL TAG }}</h1>
+                <h1 class="post-title">{{ foodoffering.name }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ NEED MODEL TAG }} | {{ NEED MODEL TAG }}</p>
+                <p class="post-subtitle">{{ foodoffering.provider }} | {{ foodoffering.created_on}}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <img src="{% static 'images/default.JPG' %}" class="scale" alt="placeholder">
@@ -27,9 +27,9 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
-                    {{ NEED MODEL TAG }}
+                    {{ foodoffering.about | safe}}
                 </p>
-                <p> Location: {{NEED MODEL TAG }}</p>
+                <p> Location: {{ foodoffering.location }}</p>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ NEED MODEL TAG}}
+                <i class="far fa-comments"></i> {{ comment_count }}
             </strong>
         </div>
         <div class="col-12">

@@ -112,6 +112,7 @@ if "debug in os.environ":
      }
  }
 else:
+
     DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DB_URL'))
 }
