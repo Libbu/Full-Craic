@@ -19,13 +19,11 @@
                                     <p class="author">Author: {{ profile.firstname}}</p>
                                 </div>
                             </div>
-                            <a href="" class="post-link">
+                            <a href="{% url 'profile_detail' profile.slug %}" class="post-link">
                                 <h2 class="card-title">{{ profile.firstname }}</h2>
                             </a>
 
                             <hr />
-                            <p class="card-text text-muted h6">{{ profile.about }}
-                            </p>
                         </div>
                     </div>
                 </div>

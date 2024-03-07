@@ -20,4 +20,4 @@ class Profile(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
-        return f"Admin:{self.username}"
+        return f"Admin:{self.user}"
