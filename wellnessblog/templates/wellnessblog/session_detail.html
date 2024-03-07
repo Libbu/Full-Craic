@@ -51,23 +51,6 @@
             <!-- Display average rating and total number of reviews -->
             <p>{{ session.avg_rating }} average based on {{ session.comment_set.count }} reviews.</p>
             <hr style="border:3px solid #f1f1f1">
-            
-            <!-- Rating Breakdown -->
-            {% for rating, count in session.rating_breakdown.items %}
-            <div class="row">
-                <div class="side">
-                    <div>{{ rating }} star</div>
-                </div>
-                <div class="middle">
-                    <div class="bar-container">
-                        <!-- Use inline styles to set the width of each rating bar -->
-                        <div class="bar-{{ rating }}"></div>
-                    </div>
-                </div>
-                <div class="side right">
-                    <div>{{ count }}</div>
-                </div>
-            </div>
             {% endfor %}
         </div>
     </div>
@@ -75,7 +58,7 @@
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ comment_count }}
+                <i class="fa fa-comments"></i> {{ comment_count }}
             </strong>
         </div>
         <div class="col-12">
@@ -133,11 +116,11 @@
                                     <p>You have already rated this session. Your rating: {{ user.profile.rating }}/5</p>
                                 {% else %}
                                     <div class="stars" onclick="rateSession(this)">
-                                        <i class="far fa-star" data-value="1"></i>
-                                        <i class="far fa-star" data-value="2"></i>
-                                        <i class="far fa-star" data-value="3"></i>
-                                        <i class="far fa-star" data-value="4"></i>
-                                        <i class="far fa-star" data-value="5"></i>
+                                        <i class="fa fa-star" data-value="1"></i>
+                                        <i class="fa fa-star" data-value="2"></i>
+                                        <i class="fa fa-star" data-value="3"></i>
+                                        <i class="fa fa-star" data-value="4"></i>
+                                        <i class="fa fa-star" data-value="5"></i>
                                     </div>
                                 {% endif %}
                             {% else %}
