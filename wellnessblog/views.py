@@ -23,6 +23,16 @@ def session_detail(request, slug):
     comments = session.comments.all().order_by("-created_on")
     comment_count = session.comments.filter(approved=True).count()
 
+    #WORKING
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            # commment.user not comment.author
+            comment.user = request.user
+            comment.session = session
+            comment.save()
+
     comment_form = CommentForm()    
    
     return render(request, "wellnessblog/session_detail.html", {'session': session, "comments": comments, "comment_count": comment_count, "comment_form": comment_form},)
