@@ -1,7 +1,8 @@
 /* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&family=Italiana:wght@200;300;400;500;600;700&display=swap');
 
-/* Reset default styles */
+/* homepage /landing design */
+
 html,
 body {
     width: 100%;
@@ -10,7 +11,14 @@ body {
     padding: 0;
     overflow-x: hidden;
     background-color: #FFE6E8;
+    margin-bottom: 0; /* Set margin-bottom to 0 */
+    background-image: url('/static/images/fengshui.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
+
+
 
 
 /* Navbar */
@@ -30,14 +38,15 @@ div.container-fluid.navalert-container {
 .navalert-container h1 {
     font-family: "Italiana", sans-serif;
     width: 30%;
-    color: #ffe6e8;
+    color: #fdfbf0;
 }
 
 .navbar {
     margin: 0;
     border: 0;
     width: 100%;
-    background-color: rgba(113, 6, 39);
+    background-color: #817C68;
+
 }
 
 .navbar .navbar-toggler {
@@ -58,11 +67,21 @@ div.container-fluid.navalert-container {
     background-color: powderblue;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+    color: #817C68;
+}
+
 /*Session List Styling for home page nicked from LMS*/
 
 .card {
-    border: none;
-    background-color: transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: card-bg;
+    background-clip: border-box;
+    border: 0px solid rgba(0,0,0,.125)
 }
 
 .image-container {
@@ -74,12 +93,13 @@ div.container-fluid.navalert-container {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #188181;
+    background-color: #817C68;
 }
 
 .scale {
     width: 100%;
     height: auto;
+    margin: -7px
 }
 
 .author {
@@ -98,7 +118,7 @@ div.container-fluid.navalert-container {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #817C68;
     color: white;
     position: relative;
 }
@@ -115,7 +135,7 @@ div.container-fluid.navalert-container {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #817C68;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -129,7 +149,7 @@ div.container-fluid.navalert-container {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #306b39;
 }
 
 .post-title {
@@ -151,12 +171,17 @@ div.container-fluid.navalert-container {
     color: goldenrod;
 }
 
-/* Footer */
+/*------------------------------- Footer */
 footer {
-    background-color: #710627;
+    background-color: #817C68;
     color: #ffe6e8;
-    min-height: 120px;
-    margin-top: 179px;
+    margin-top: 75vh;
+    padding: px 0;
+    height:auto;
+}
+
+#footer-details {
+    padding-top: 10px;
 }
 
 .social-links {
@@ -176,7 +201,7 @@ footer {
     line-height: 7px;
     text-align: center;
     color: #ffe6e8;
-    background-color: #710627;
+    background-color: #817C68;
     transition: all 0.35s ease-in-out;
 }
 
@@ -185,23 +210,33 @@ footer {
     color: #d6ffb7;
 }
 
-#footer-details {
-    padding-top: 20px;
-}
 
 /* Form Styling */
 form {
-    background-color: #ecdbdb;
+    background-color: #817C68;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 1.1);
+    width: 40vw; /* Adjust the max-width as needed */
+    margin: 10vh auto; /* Center the form horizontally */
+}
+#commentForm{
+    width:15vw;
 }
 
+.login-form{
+    background-color: #817C68;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 1.1);
+    width:25vw; /* Adjust the max-width as needed */
+    margin: 10vh auto; /* Center the form horizontally */
+}
 form label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #4d041a;
+    color: #817C68;
 }
 
 form input,
@@ -211,21 +246,21 @@ form select {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background: #ecdbdb;
+    background: white
 }
 
 form button {
-    background-color: #710627;
-    color: #fff;
+    background-color: #817c68; 
+    color: #CDc8BD;
     padding: 12px 20px;
-    border: none;
+    border-color: #ccc;
     border-radius: 4px;
     cursor: pointer;
 }
 
 
 form button:hover {
-    background-color: #4d041a;
+    background-color: orange;
 }
 
 form .errorlist {
@@ -234,20 +269,38 @@ form .errorlist {
 }
 
 /* Media Queries */
+
+
 @media screen and (max-width: 767px) {
     form {
-        max-width: 100%;
+        width: 80%; /* Adjust the width as needed */
+        margin: 10vh auto;
     }
 
     form button {
         width: 100%;
     }
-}
 
+    .masthead-text {
+        width: 100%;
+    }
+}
 
 @media screen and (max-width: 446px) {
     .navalert-container h1 {
         font-family: "Italiana", sans-serif;
         font-size: 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .masthead h1 {
+        font-size: 1.5rem;
+    }
+
+    .masthead-text {
+        padding: 1rem;
     }
 }

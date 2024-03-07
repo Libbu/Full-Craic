@@ -2,62 +2,80 @@
 {% load static %}
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col-md-8 mt-3 offset-md-2 text-center"> <!-- Center-align the heading -->
             <h3>{% trans "Sign Up" %}</h3>
             <p>{% blocktrans %}Welcome back to Thriving Together. Already have an account? <a class="link" href="{{ login_url }}">Sign in</a> instead.{% endblocktrans %}</p>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
+            </div>
             <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 
+                <!-- Username Field -->
                 <div class="form-group">
                     {{ form.username.label_tag }}
                     {{ form.username }}
                 </div>
+
+                <!-- First Name Field -->
                 <div class="form-group">
                     {{ form.firstname.label_tag }}
                     {{ form.firstname }}
                 </div>
+
+                <!-- Last Name Field -->
                 <div class="form-group">
                     {{ form.lastname.label_tag }}
                     {{ form.lastname }}
                 </div>
+
+                <!-- Email Field -->
                 <div class="form-group">
                     {{ form.email.label_tag }}
                     {{ form.email }}
                 </div>
+
+                <!-- Image Field -->
                 <div class="form-group">
                     {{ form.image.label_tag }}
                     {{ form.image }}
                 </div>
+
+                <!-- User Role Field -->
                 <div class="form-group">
                     {{ form.user_role.label_tag }}
                     {{ form.user_role }}
                 </div>
+
+                <!-- Password1 Field -->
                 <div class="form-group">
                     {{ form.password1.label_tag }}
                     {{ form.password1 }}
                 </div>
+
+                <!-- Password2 Field -->
                 <div class="form-group">
                     {{ form.password2.label_tag }}
                     {{ form.password2 }}
                 </div>
 
+                <!-- Redirect Field Value -->
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
 
-                <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
+                <!-- Submit Button -->
+                <button class="btn btn-signup" type="submit">{% trans "Sign Up" %} &raquo;</button>
             </form>
         </div>
     </div>
 </div>
-
 {% endblock %}

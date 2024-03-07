@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-67iwbpz!b+q3@y_(vwioaucb@k(-b)ta5muxcfj4j7cc9!g1%p
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #debug mode is dynamically set please don't change this
-DEBUG = 'DEBUG' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com']
@@ -104,17 +104,17 @@ WSGI_APPLICATION = 'thrivingtogether.wsgi.application'
 # Database will use local sqlite in dev and elephantsql in prod
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if "debug in os.environ":
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+# if "debug in os.environ":
+#     DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# else:
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DB_URL'))
 }
-else:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DB_URL'))
-    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
