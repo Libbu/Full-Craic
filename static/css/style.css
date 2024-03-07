@@ -143,7 +143,13 @@ div.container-fluid.navalert-container {
 }
 
 /* Star Rating Styles */
-
+.fa {
+    font-size: 25px;
+  }
+  
+  .checked {
+    color: goldenrod;
+  }
 
 /* Footer */
 footer {

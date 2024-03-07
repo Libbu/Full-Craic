@@ -52,7 +52,6 @@
             <!-- Display average rating and total number of reviews -->
             <p>{{ session.avg_rating }} average based on {{ session.comment_set.count }} reviews.</p>
             <hr style="border:3px solid #f1f1f1">
-            {% endfor %}
         </div>
     </div>
     <!-- Displaying count of comments -->
@@ -106,30 +105,30 @@
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                <!-- Star Ratings -->
-                <div class="row">
-                    <div class="col-md-8 card mb-4 mt-3">
-                        <h3>Rate this session:</h3>
-                        <div class="card-body">
-                            {% if user.is_authenticated %}
-                                {% if user.profile.has_rated_session %}
-                                    <p>You have already rated this session. Your rating: {{ user.profile.rating }}/5</p>
+                    <!-- Star Ratings -->
+                    <div class="row">
+                        <div class="col-md-8 card mb-4 mt-3">
+                            <h3>Rate this session:</h3>
+                            <div class="card-body">
+                                {% if user.is_authenticated %}
+                                    {% if user.profile.has_rated_session %}
+                                        <p>You have already rated this session. Your rating: {{ user.profile.rating }}/5</p>
+                                    {% else %}
+                                        <div class="stars" onclick="rateSession(this)">
+                                            <i class="fa fa-star" data-value="1"></i>
+                                            <i class="fa fa-star" data-value="2"></i>
+                                            <i class="fa fa-star" data-value="3"></i>
+                                            <i class="fa fa-star" data-value="4"></i>
+                                            <i class="fa fa-star" data-value="5"></i>
+                                        </div>
+                                    {% endif %}
                                 {% else %}
-                                    <div class="stars" onclick="rateSession(this)">
-                                        <i class="fa fa-star" data-value="1"></i>
-                                        <i class="fa fa-star" data-value="2"></i>
-                                        <i class="fa fa-star" data-value="3"></i>
-                                        <i class="fa fa-star" data-value="4"></i>
-                                        <i class="fa fa-star" data-value="5"></i>
-                                    </div>
+                                    <p>Log in to leave a comment or rating</p>
                                 {% endif %}
-                            {% else %}
-                                <p>Log in to leave a comment or rating</p>
-                            {% endif %}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
                 {% endif %}
             </div>
         </div>
