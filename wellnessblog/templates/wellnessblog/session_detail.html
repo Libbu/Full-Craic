@@ -35,6 +35,42 @@
             </div>
         </div>
     </div>
+    <!-- Overall Rating Section -->
+    <div class="col-md-8 card mb-4 mt-3">
+        <h3>Overall Rating:</h3>
+        <div class="card-body">
+            <div class="stars">
+                <!-- Display overall rating stars based on session's average rating -->
+                {% for i in 1|times:session.avg_rating %}
+                    <span class="fa fa-star checked"></span>
+                {% endfor %}
+                {% for i in session.avg_rating|add:1|range:5 %}
+                    <span class="fa fa-star"></span>
+                {% endfor %}
+            </div>
+            <!-- Display average rating and total number of reviews -->
+            <p>{{ session.avg_rating }} average based on {{ session.comment_set.count }} reviews.</p>
+            <hr style="border:3px solid #f1f1f1">
+            
+            <!-- Rating Breakdown -->
+            {% for rating, count in session.rating_breakdown.items %}
+            <div class="row">
+                <div class="side">
+                    <div>{{ rating }} star</div>
+                </div>
+                <div class="middle">
+                    <div class="bar-container">
+                        <!-- Use inline styles to set the width of each rating bar -->
+                        <div class="bar-{{ rating }}"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>{{ count }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
     <!-- Displaying count of comments -->
     <div class="row">
         <div class="col-12">
@@ -87,12 +123,32 @@
                     {% csrf_token %}
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
-                {% else %}
-                <p>Log in to leave a comment</p>
+                <!-- Star Ratings -->
+                <div class="row">
+                    <div class="col-md-8 card mb-4 mt-3">
+                        <h3>Rate this session:</h3>
+                        <div class="card-body">
+                            {% if user.is_authenticated %}
+                                {% if user.profile.has_rated_session %}
+                                    <p>You have already rated this session. Your rating: {{ user.profile.rating }}/5</p>
+                                {% else %}
+                                    <div class="stars" onclick="rateSession(this)">
+                                        <i class="far fa-star" data-value="1"></i>
+                                        <i class="far fa-star" data-value="2"></i>
+                                        <i class="far fa-star" data-value="3"></i>
+                                        <i class="far fa-star" data-value="4"></i>
+                                        <i class="far fa-star" data-value="5"></i>
+                                    </div>
+                                {% endif %}
+                            {% else %}
+                                <p>Log in to leave a comment or rating</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
-
 {% endblock content %}
