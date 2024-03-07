@@ -74,6 +74,9 @@
         </div>
     </div>
 
+    {% block content %}
+    {% endblock %}
+
     <main class="flex-shrink-0 main-bg">
         {% if user.is_authenticated %}
         <p class="text-end m-3">You are logged in as {{ user }}</p>
@@ -81,9 +84,6 @@
         <p class="text-end m-3">You are not logged in</p>
         {% endif %}
     </main>
-
-    {% block content %}
-    {% endblock %}
 
     <!--begining of footer this will display under the nav bar until content added inbetween!-->
 

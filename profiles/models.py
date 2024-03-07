@@ -8,6 +8,8 @@ class Profile(models.Model):
     """
     Stores admin data for presentation.
     """
+    name = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="profile"
     )
