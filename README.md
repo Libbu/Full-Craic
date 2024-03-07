@@ -36,13 +36,13 @@ The sites navigation has been kept very simple to adhere to the Minimum Viable P
 
 ## Scope
 
-| **Wellness Blog Landing Page**   | **Food Offerings Landing Page**   | **Post Details Page** | **Website as a whole** |
+| **Wellness Blog Landing Page**   | **Food Offerings Landing Page**   | **Posts Details Page** | **Website as a whole** |
 |---|---|---|---|
 | List of posts  | List of posts | Post Content | Site nav bar |
 | Posts load on click | Posts load on click | Comment Section| Footer with social media links |
 | | | | Sign-in/up/out options |
-| | Play again Button and Reset Button | | |
-| | Help/Rules Button | | |
+| | | Aesthetic wellness images |
+
 
 ### High-Level Features
 
