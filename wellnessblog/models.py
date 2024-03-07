@@ -78,7 +78,7 @@ class Comment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     comment_body = models.TextField()
     approved = models.BooleanField(default=False)
-    stars = models.IntegerField(choices=[(i, i) for i in range(1, 12)],blank=True, null=True)  # Restrict to values 1 to 11 = 0 - 5 stars in half-star increments
+    stars = models.IntegerField(choices=[(i, i) for i in range(1, 6)],blank=True, null=True)  # Restrict to values 1 to 5 = 1 - 5 stars
 
     class Meta:
         ordering = ["-created_on"]
