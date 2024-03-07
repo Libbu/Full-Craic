@@ -1,6 +1,7 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+{% url 'foodblog' as food_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -31,10 +32,10 @@
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
-                    <li class="active nav-item ml-2"><a class="nav-link {% if request.path == home_url %}active"
+                    <li class="nav-item ml-2"><a class="nav-link {% if request.path == home_url %}active"
                             aria-current="page{% endif %}" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item ml-2"><a class="nav-link {% if request.path == food_url %}active"
-                            aria-current="page{% endif %}" href="">Food</a></li>
+                            aria-current="page{% endif %}" href="{% url 'foodblog' %}">Food</a></li>
                     <li class="nav-item ml-2"> <a class="nav-link {% if request.path == about_url %}active"
                             aria-current="page{% endif %}" href="">Meet the Team</a></li>
                     {% if user.is_authenticated %}
