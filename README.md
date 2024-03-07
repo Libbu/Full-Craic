@@ -127,7 +127,33 @@ PICTURE OF AN ACTUAL POST HERE
 
 ## Structure 
 
-### Site Wireframes
+### Low Fidelity Wireframes
+
+- __Desktop Landing Page__
+
+LOWFIDLANDING
+
+- __Desktop Post/Session Detail__
+
+LOWFIDBLOGPOST
+
+- __Registration Form__
+
+LOWFIDSIGNUP
+
+- __Home Page Mobile View__
+
+- __Post/Session Detail Mobile View__
+
+- __Registration Form Mobile View__
+
+### High Fidelity Wireframes
+
+- __Desktop Landing Page__
+
+- __Desktop Post/Session Detail__
+
+- __Registration Form__
 
 
 ## Surface
@@ -136,11 +162,35 @@ PICTURE OF AN ACTUAL POST HERE
 
 #### Chosen Colours
 
-#### Fonts
+A site palette was chosen from those highlighted on [Hello CoCreator](https://hellococreator.com/2023/09/14/best-color-palettes-wellness/)
+
+The Palette chosen was:
+
+![palette](https://github.com/Libbu/Full-Craic/blob/main/media/palattewellness2.jpg)
 
 #### Media
 
+Images are used to enhance UX and the aesthetic feel of our wellness site throughout.
+
+
+## Database Design
+
+The Entity Relationship Diagram reflecting our deployed project is as follows:
+
+![ERD](https://github.com/Libbu/Full-Craic/blob/main/media/erd1.png)
+
+Having developed in line with separation of concern principles, we feel in the future our database models and relationships can be simplified and utilised to meet the same stake-holder goals with additional views logic. An example of how relationships and models within this database could look is below, however we are still excited to see how our project could evolve in the hands of users.
+
+![ERD2](https://github.com/Libbu/Full-Craic/blob/main/media/erd2.png)
+
 ## Technologies Used
+
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- Python
+- Django 
 
 ## Testing
 
@@ -160,7 +210,19 @@ PICTURE OF AN ACTUAL POST HERE
 
 ### Media
 
-### Acknowledgements 
+### Acknowledgements
+
+Back-end functionality is heavily inspired by CodeInstitute walkthrough project: I Think Therefore I Blog
+
+Further assistance gratefully received from CI tutors Iris, Kevin and Martin, and the wider CI slack community.
+
+Unless otherwise noted all code and content is the work of Team Full Craic as part of the Gwent group’s 3rd 3-day Hackathon for their Code Institute Bootcamp.
 
 ### Team Full Craic:
+
+- Elizabeth Spivey: Team Lead, Agile Project Management, Django configuration, Front-End and Back-End Development
+- James Price: Database development Lead, Front-End and Back-End Development
+- Tyrel Morant: Front-End Development and UX/UI Implementation Lead
+- Esther Njoku: UX/UI Design and Wireframing Lead
+
 
