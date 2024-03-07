@@ -11,7 +11,6 @@ class Profile(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_profile"
     )
-    username = models.CharField(max_length=200, unique=True)
     firstname = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
     image = CloudinaryField('image', default='placeholder')

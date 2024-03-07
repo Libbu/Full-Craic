@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-class FoodSession(models.Model):
+class FoodOffering(models.Model):
     """
     Stores a single food event entry related to :model:`UserProfile`.
     """
@@ -17,11 +17,7 @@ class FoodSession(models.Model):
     about = models.TextField(editable=True)
     location = models.CharField(max_length=200, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    session_date_time = models.DateTimeField(blank=True, null=True)
     updated_on = models.DateTimeField(auto_now=True)
-    participants = models.ManyToManyField(
-        UserProfile, related_name='attended_sessions', blank=True
-    )
     keywords = models.CharField(max_length=200, blank=True, null=True)
     status = models.IntegerField(choices=STATUS, default=0)
     
@@ -29,16 +25,16 @@ class FoodSession(models.Model):
         ordering = ["-session_date_time"]
         
     def __str__(self):
-        return f"Session:{self.name} | provided by {self.provider}"
+        return f"FoodOffering:{self.name} | provided by {self.provider}"
 
 
-class Comment(models.Model):
+class FoodComment(models.Model):
     """
     Stores a comment and feedback from a user related to :model:`UserProfile`
     regarding a food event related to :model:`Session`.
     """
-    session = models.ForeignKey(
-        Session, on_delete=models.CASCADE, related_name="comments"
+    food_blog = models.ForeignKey(
+        FoodOffering, on_delete=models.CASCADE, related_name="comments"
     )
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_comment"
@@ -52,4 +48,4 @@ class Comment(models.Model):
         ordering = ["-created_on"]
         
     def __str__(self):
-        return f"Comment by {self.user} on {self.session}"
+        return f"Comment by {self.user} on {self.food_blog}"
