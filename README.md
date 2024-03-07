@@ -6,8 +6,7 @@ The intended consumers of the information in this resource are students, whilst 
 
 The website features three sections: The home page takes users to posts on the subjects of wellness, the primary driver behind the initiative. A seperate food section features information available concerning healthy food in the immediate vicinity. A profiles session lists information about site contributors so that users can get to know those responsible for the site content and their background. 
 
-Landing Page:
-
+![Landing Page](https://https://github.com/Libbu/Full-Craic/blob/main/media/cleanlanding.jpg)
 
 
 ## UX
@@ -46,6 +45,90 @@ The sites navigation has been kept very simple to adhere to the Minimum Viable P
 
 
 |  **Feature** | **Value**  |  **Effort** |
+|---|---|---|
+| Landing Page  |  High |  Medium |
+| Paginated List of Posts  | High  |  Medium |
+| User Registration  | High  | High  |
+| Navbar  |  High | Low  |
+| Footer    | Medium  |Low   |
+| Users Can Comment | High | High |
+| Admin Can Publish Posts |  High | High |
+| Wellness Aesthetic in Design    | High  |Low   |
+| Ability to comment | High | High |
+| Users Can Leave Reviews|  High | Medium |
+
+| Feature  |  Priority |
+|---|---|
+| Landing Page | 1  |
+| Paginated Posts | 1 |
+| Food Section | 2  |
+| Contributor Profiles Section | 2  |
+| Sign-in  | 1 |
+| New User Registration | 1  |
+| Logout | 1  |
+| Ability to Comment | 1  |
+| Details of Sessions display when posts are clicked on | 1 |
+| Wellness Design Aesthetic | 3  |
+| Navigation Menu | 1 |
+| Footer | 1  |
+
+- __Navigation Bar__
+
+  - Featured on all sections of the webiste, the fully responsive navigation bar includes links to the main landing page (home), the food section, and a meet the team section for contributor profiles. It is identical in each page to allow for easy navigation.
+
+  - The navigation bar allows the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button.
+
+  - Options visibile on the navigation bar will change depending on whether the user is signed in or not. 
+
+![Nav Bar](https://github.com/Libbu/Full-Craic/blob/main/media/navbar.JPG)
+
+- __The homepage background image__
+
+  - The landing page background image is a high quality photograph depicting a peacefull and relaxing scene.
+  - Providing a backdrop for our posts, it visually reinforces the page aesthetic.
+
+![Landing Page](https://github.com/Libbu/Full-Craic/blob/main/media/soothingimage.jpg)
+
+- __Paginated Posts for Sessions/Blogs/Other Wellness Content__
+
+  - This section invites the user to delve more deeply into our content by clicking on the post card to read what our contributors have had to offer.
+
+IMAGE OF BLOG POST CARDS
+
+- __The Footer__ 
+
+  - The footer includes links the user can follow to access our social media content on different platforms, encouraging them to stay connected with our wellness resources.
+
+  - The footer displays consistently across all pages and is responsive on mobile. 
+
+![Footer](https://github.com/Libbu/Full-Craic/blob/main/media/footer.JPG)
+
+- __Registration, Sign In, and Sign Out pages__
+
+  - These forms allow users to register for our website, registration is neccessary so that they can comment on contributor posts where this facility is allowed. 
+
+  - These sections are valuable, therefore registration is possible with minimal fuss, and forms are styled to reflect our wellness aesthetic.
+
+![Registration](https://github.com/Libbu/CyberPixels/blob/main/media/destthai.png)
+![Signin](https://github.com/Libbu/Full-Craic/blob/main/media/login.JPG)
+![Signout](https://github.com/Libbu/Full-Craic/blob/main/media/signoutbutton.JPG)
+
+- __The Detail of Session, Food and Profile Posts__ 
+
+  - These are where the substance of our wellness content lies. An eye-catching header image encourages the viewer to read further, revealing new information about sessions on offer to them as well as the time and location of these. On Food and Meet the Team sections of the website, it is expected that these posts will contain information about healthy food offerings on campus, and contrinutors to our page content. 
+
+PICTURE OF AN ACTUAL POST HERE
+
+- __The Comment Box__ 
+
+  - Only visible to logged-in users, the comment box allows engagement on posts, whether this be to confirm attendance at a session, or feedback about a specific piece of content. Comments must be approved by site administrators.
+
+![Comment Box](https://github.com/Libbu/Full-Craic/blob/main/media/commentbox.JPG) 
+
+## Structure 
+
+### Site Wireframes
+
 
 ## Surface
 
