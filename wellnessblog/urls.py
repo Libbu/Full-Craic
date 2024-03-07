@@ -1,6 +1,7 @@
-from django.urls import path
 from . import views
+from django.urls import path
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('', views.SessionList.as_view(), name='home'),
+    path('<slug:slug>/', views.session_detail, name='session_detail'),
 ]
