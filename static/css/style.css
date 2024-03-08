@@ -168,7 +168,16 @@ div.container-fluid.navalert-container {
     color: lightgray;
 }
 
-/* Footer */
+/* Star Rating Styles */
+.fa {
+    font-size: 25px;
+  }
+  
+.checked {
+    color: goldenrod;
+}
+
+/*------------------------------- Footer */
 footer {
     background-color: #817C68;
     color: #ffe6e8;
@@ -240,7 +249,8 @@ footer {
 }
 
 .card-body {
-    color: #fff;
+    color: #000000;
+    /* Adjust text color as needed */
 }
 
 /* Food blog hero image */

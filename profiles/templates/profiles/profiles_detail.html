@@ -13,7 +13,7 @@
                 <p class="post-subtitle">Written By: {{ profile.firstname }} </p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/default.JPG' %}" class="scale" alt="placeholder">
+                <img src="{{ profile.image.url }}" class="scale" alt="placeholder">
             </div>
         </div>
     </div>
