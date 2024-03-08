@@ -204,11 +204,49 @@ Having developed in line with separation of concern principles, we feel in the f
 
 ## Testing
 
+Testing of site functionality was done manually during development and post deployment.
+
+It is our intention to carry out automated tests as part of routine app maintenance.
+
 ### Validating
 
 ## User Story Testing
 
+1. As a **student** I can **browse wellbeing content** so that I can be **informed about what is available to me**.
+- The wellbeing section of our site displays on arrival and posts can be accessed by clicking on the relevant cards.
+
+2. As a **student** I can **register an account** so that I can **comment on posts**.
+- upon arriving at our website users are able to register accounts which grants them access to the facility to post comments in the wellbeing section.
+
+- At the time of writing comments are not open on all posts in the Food however we are considering this for a future release. We do not feel that comment functionality needs to exist for the meet the team section.
+
+3. As a **therapist/instructor** I can **include a section about me** so that users can **learn more about who is writing the content**.
+- Site admins are able to post, edit and remove a profile to the "Meet the Team" section of the website. They can add an image to their profile which will display.
+
+4. As a **food vendor** I can **include posts about healthy eating options** so that **students are aware of their choices**.
+- functionality to enable display of posts in the Food section of the webpage is due to be deployed at a later date. As a stand-in measure food vendors are able to make use of the post functionality in the general wellness section to communicate about their offerings.
+
+5. As a **student** I **can leave comments** on the site to **engage with site-owners/confirm attendence**.
+- Students who have registered are able to leave comments under posts about wellbeing sessions. They can use these to confirm attendence, or simply to engage with the content.
+
+6. As a **therapist/instructor** I can **create posts** to the relevant section of the page **to share information with users**.
+-Therapists, Instructors and other site admins can create posts that publish to the wellbeing section of the website.
+
+7. As a **site owner** I **want visitors to the page to see a list of linked social media accounts** so that they can **follow me on other platforms**.
+-A list of social media links display in the footer at the bottom of each page.
+
+8. As a **student** I am able to **indicate what wellness content interests me** so that I can **receive information relevant to my interests**.
+-Due to prioritisation this feature is not ready for deployment at the time of writing. As development work has been underway on it, we hope to include it in a later release.
+
+9. As a **student** I will **see community feedback** so that I can **see the quality of the resources provided**.
+- Other users comments underneath posts in the wellness section show to all site visitors. We plan to deploy this feature for our food section at a later date. 
+
+10. As a **student** I am able to **view a record of sessions** I've attended so that **I know what I've done**.
+- Due to prioritisation this feature has been moved to a future release.
+
 ### Features For Future Implementation
+
+
 
 ## Known Issues and Bugs
 
