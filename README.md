@@ -215,7 +215,7 @@ It is our intention to carry out automated tests as part of routine app maintena
 
 - HTML
 
-Some errors in the HTML were found to be present:
+Some errors in the HTML were found to be present when the pages were passed through [Nu HTML Checker](https://validator.w3.org/nu/):
 
 ![HTML](https://github.com/Libbu/Full-Craic/blob/main/media/htmlerros.png)
 ![HTML](https://github.com/Libbu/Full-Craic/blob/main/media/htmlerrors2.png)
