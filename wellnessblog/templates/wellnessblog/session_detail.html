@@ -67,7 +67,8 @@
             <h3>Comments:</h3>
             <div class="card-body">
                 {% for comment in comments %}
-                <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %}d-none{% endif %}">
+                <div
+                    class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %}d-none{% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.user }}
                         <span class="font-weight-normal">{{ comment.created_on }} wrote:</span>
@@ -77,6 +78,10 @@
                     </div>
                     {% if not comment.approved and comment.user == user %}
                     <p class="approval">This comment is awaiting approval</p>
+                    {% endif %}
+                    {% if user.is_authenticated and comment.user == user %}
+                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -98,19 +103,19 @@
                             <h3>Rate this session:</h3>
                             <div class="card-body">
                                 {% if user.is_authenticated %}
-                                    {% if user.profile.has_rated_session %}
-                                        <p>You have already rated this session. Your rating: {{ user.profile.rating }}/5</p>
-                                    {% else %}
-                                        <div class="stars" onclick="rateSession(this)">
-                                            <i class="fa fa-star" data-value="1"></i>
-                                            <i class="fa fa-star" data-value="2"></i>
-                                            <i class="fa fa-star" data-value="3"></i>
-                                            <i class="fa fa-star" data-value="4"></i>
-                                            <i class="fa fa-star" data-value="5"></i>
-                                        </div>
-                                    {% endif %}
+                                {% if user.profile.has_rated_session %}
+                                <p>You have already rated this session. Your rating: {{ user.profile.rating }}/5</p>
                                 {% else %}
-                                    <p>Log in to leave a comment or rating</p>
+                                <div class="stars" onclick="rateSession(this)">
+                                    <i class="fa fa-star" data-value="1"></i>
+                                    <i class="fa fa-star" data-value="2"></i>
+                                    <i class="fa fa-star" data-value="3"></i>
+                                    <i class="fa fa-star" data-value="4"></i>
+                                    <i class="fa fa-star" data-value="5"></i>
+                                </div>
+                                {% endif %}
+                                {% else %}
+                                <p>Log in to leave a comment or rating</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -121,4 +126,28 @@
         </div>
     </div>
 </div>
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
+
+{% block extras %}
+<!-- Imports comments.js for full CRUD functionality -->
+<script src="{% static 'js/comments.js' %}"></script>
+{% endblock %}
