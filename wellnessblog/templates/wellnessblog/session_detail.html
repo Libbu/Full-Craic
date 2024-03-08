@@ -50,13 +50,13 @@
                 {% for comment in comments %}
                 <div class="p-2 comments {% if not comment.approved and comment.author == user %}faded{% elif not comment.approved %}d-none{% endif %}">
                     <p class="font-weight-bold">
-                        {{ comment.author }}
+                        {{ comment.user }}
                         <span class="font-weight-normal">{{ comment.created_on }} wrote:</span>
                     </p>
                     <div id="comment{{ comment.id }}">
                         {{ comment.comment_body | linebreaks }}
                     </div>
-                    {% if not comment.approved and comment.author == user %}
+                    {% if not comment.approved and comment.user == user %}
                     <p class="approval">This comment is awaiting approval</p>
                     {% endif %}
                 </div>
@@ -81,5 +81,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock content %}
