@@ -3,28 +3,33 @@
 
 {% block content %}
 
-<!-- Rating Section -->
-<div class="container-fluid rating-section">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="display-4">Rate Our Profiles</h1>
-            <p class="lead">Share your thoughts and experiences with our profiles</p>
-            <!-- Add your rating form or other content here -->
-        </div>
-    </div>
-</div>
-
 <!-- Placeholder Profiles -->
 <div class="container-fluid">
     <div class="row">
-        {% for _ in "123" %}
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="image-container">
-                        <img src="{% static '/images/janedoe.jpg' %}" alt="Profile Image" class="img-fluid">
-                        <div class="image-flash">
-                            <p class="author">Jane doe {{ forloop.counter }}</p>
+
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for profile in object_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in session.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                    alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src="{{ profile.image.url }}" alt="{{ profile.name }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ profile.firstname}}</p>
+                                </div>
+                            </div>
+                            <a href="{% url 'profile_detail' profile.slug %}" class="post-link">
+                                <h2 class="card-title">{{ profile.firstname }}</h2>
+                            </a>
+
+                            <hr />
                         </div>
                     </div>
                     <a href="#" class="post-link">
