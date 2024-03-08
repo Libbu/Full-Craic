@@ -24,6 +24,11 @@
           <div class="card mb-4">
             <div class="card-body">
               <div class="image-container">
+                {% if "placeholder" in session.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                {% else %}
+                <img class="card-img-top" src=" {{ session.image.url }}" alt="{{ session.name }}">
+                {% endif %}
                 <div class="image-flash">
                   <p class="author">Provider: {{ session.provider }}</p>
                 </div>
@@ -38,8 +43,8 @@
           </div>
         </div>
         {% if forloop.counter|divisibleby:3 %}
-        </div>
-        <div class="row">
+      </div>
+      <div class="row">
         {% endif %}
         {% endfor %}
       </div>
