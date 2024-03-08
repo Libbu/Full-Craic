@@ -11,7 +11,8 @@ body {
     padding: 0;
     overflow-x: hidden;
     background-color: #FFE6E8;
-    margin-bottom: 0; /* Set margin-bottom to 0 */
+    margin-bottom: 0;
+    /* Set margin-bottom to 0 */
     background-image: url('/static/images/fengshui.jpg');
     background-size: cover;
     background-position: center center;
@@ -47,7 +48,8 @@ div.container-fluid.navalert-container {
     border: 0;
     width: 100%;
     background-color: #817C68;
-    z-index: 1000; /* Set a higher value, adjust as needed */
+    z-index: 1000;
+   
 }
 
 .navbar .navbar-toggler {
@@ -172,7 +174,8 @@ footer {
     background-color: #817C68;
     color: #ffe6e8;
     margin-top: 75vh;
-    padding: 20px 0; /* Adjusted padding */
+    padding: 20px 0;
+    /* Adjusted padding */
     height: auto;
 }
 
@@ -228,11 +231,13 @@ footer {
 
 /* Title Header and Food Offerings */
 .container-fluid {
-    padding-top: 20px; /* Adjust as needed */
+    padding-top: 20px;
+    /* Adjust as needed */
 }
 
 .card-body {
-    color: #fff; /* Adjust text color as needed */
+    color: #fff;
+    /* Adjust text color as needed */
 }
 
 /* Food blog hero image */
@@ -247,10 +252,9 @@ footer {
 form {
     background-color: #817C68;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 11px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 1.1);
-    width: 40vw; /* Adjust the max-width as needed */
-    margin: 10vh auto; /* Center the form horizontally */
+    width: 90vw;
 }
 
 #commentForm {
@@ -267,8 +271,10 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 1.1);
-    width: 25vw; /* Adjust the max-width as needed */
-    margin: 10vh auto; /* Center the form horizontally */
+    width: 15vw;
+    /* Adjust the max-width as needed */
+    margin: 10vh auto;
+    /* Center the form horizontally */
 }
 
 form label {
@@ -311,26 +317,54 @@ form .errorlist {
 /* Larger screens */
 @media screen and (min-width: 992px) {
     .masthead {
-        height: 40vh; /* Adjust the height as needed */
+        height: 40vh;
+        /* Adjust the height as needed */
     }
 
     .masthead-text {
-        width: 60%; /* Adjust the width as needed */
+        width: 60%;
+        /* Adjust the width as needed */
     }
 
     .masthead-image {
-        width: 40%; /* Adjust the width as needed */
+        width: 40%;
+        /* Adjust the width as needed */
     }
 
     .card {
-        min-height: 400px; /* Adjust the min-height as needed */
+        min-height: 400px;
+        /* Adjust the min-height as needed */
+    }
+
+    .login-form {
+        width: 20vw;
+        /* Adjust the width as needed */
+    }
+
+    .signup-form {
+        width: 25vw;
+        /* Adjust the width as needed */
+    }
+    .form button {
+        background-color: #817c68; 
+        color: #CDc8BD;
+        padding: 12px 20px;
+        border-color: #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .form button:hover {
+        background-color: orange;
     }
 }
+
 
 /* Medium screens */
 @media screen and (max-width: 991px) {
     .masthead {
-        height: 30vh; /* Adjust the height as needed */
+        height: 30vh;
+        /* Adjust the height as needed */
     }
 
     .masthead-text {
@@ -338,18 +372,44 @@ form .errorlist {
     }
 
     .masthead-image {
-        display: none; /* Hide the image on medium screens */
+        display: none;
+        /* Hide the image on medium screens */
     }
 
     .card {
-        min-height: 300px; /* Adjust the min-height as needed */
+        min-height: 300px;
+        /* Adjust the min-height as needed */
+    }
+
+    .login-form {
+        width: 40vw;
+        /* Adjust the width as needed */
+    }
+
+    .signup-form {
+        width: 40vw;
+        /* Adjust the width as needed */
+    }
+
+    .form button {
+        background-color: #817c68; 
+        color: #CDc8BD;
+        padding: 12px 20px;
+        border-color: #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .form button:hover {
+        background-color: orange;
     }
 }
 
 /* Small screens */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 375px) {
     .masthead {
-        height: 20vh; /* Adjust the height as needed */
+        height: 40vh;
+        /* Adjust the height as needed */
     }
 
     .masthead-text {
@@ -357,22 +417,59 @@ form .errorlist {
     }
 
     .masthead-image {
-        display: none; /* Hide the image on small screens */
+        display: none;
+        /* Hide the image on small screens */
+    }
+    /*food hero image*/
+    .hero-section img {
+        max-width: 100vw;
+        margin-top: -20vh;
+        margin-bottom: -63px;
+        padding: 74px;
     }
 
     .card {
-        min-height: 200px; /* Adjust the min-height as needed */
+        min-height: 200px;
+        /* Adjust the min-height as needed */
     }
 
     .comments {
-        padding: 10px; /* Adjust the padding for comments on small screens */
+        padding: 10px;
+        /* Adjust the padding for comments on small screens */
     }
 
     .approval {
-        font-size: 12px; /* Adjust the font size for approval text on small screens */
+        font-size: 12px;
+        /* Adjust the font size for approval text on small screens */
     }
 
     #commentForm {
-       width:71vw;
+        width: 71vw;
     }
+
+    .login-form {
+        width: 70vw;
+        /* Adjust the width as needed */
+    }
+
+    .signup-form {
+        width: 90vw;
+        padding:0
+        /* Adjust the width as needed */
+    }
+
+    .form button {
+        background-color: #817c68; 
+        color: #CDc8BD;
+        padding: 12px 20px;
+        border-color: #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        max-width: 135vw;
+    }
+    
+    .form button:hover {
+        background-color: orange;
+    }
+
 }
