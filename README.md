@@ -234,7 +234,7 @@ An Error was found when passing the JavaScript files through [JS Hint](https://j
 
 - Lighthouse
 
-
+![Lighthouse](https://github.com/Libbu/Full-Craic/blob/main/media/lighthouse.JPG)
 
 
 ### Validating
@@ -313,7 +313,7 @@ On desktop our signout button is currenly stretching to the left.
 
 Currently the edit functionality does not work on comments. Posts made my site admins have full CRUD functionality.
 
-The lighthouse rating of site load is lower than we would like it to be, this is due to not having image compression functionality enabled. It is therefore important that site admins optimise their images for the web in future as until compression functionality exists this will reduce load times.
+The lighthouse rating of site load is lower than we would like it to be, this is due to not having image compression functionality enabled. It is therefore important that site admins optimise their images for the web in future as until compression functionality exists optimising images outside of the app in this way will reduce load times.
 
 ## Deployment
 
@@ -339,9 +339,11 @@ Fonts are from [Google Fonts](https://fonts.google.com/)
 
 High quality images were sourved from the following pages:
 
-[Unsplash](https://unsplash.com/)
-[Pixabay](https://pixabay.com/)
+- [Unsplash](https://unsplash.com/)
 
+- [Pixabay](https://pixabay.com/)
+
+- The individual Linkedin pages of team Full Craic.
 
 
 ### Acknowledgements
