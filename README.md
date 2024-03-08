@@ -229,7 +229,7 @@ No errors were found when passing through [CSS Validation](https://jigsaw.w3.org
 
 An Error was found when passing the JavaScript files through [JS Hint](https://jshint.com/) this pertained to a console log to check for connection which has been removed in deployment.
 
-![JS](https://github.com/Libbu/Full-Craic/blob/main/media/jetest1.png)
+![JS](https://github.com/Libbu/Full-Craic/blob/main/media/jstest1.png)
 ![JS](https://github.com/Libbu/Full-Craic/blob/main/media/jetest2.png)
 
 
@@ -332,6 +332,13 @@ Back-end functionality is heavily inspired by CodeInstitute walkthrough project:
 Fonts are from [Google Fonts](https://fonts.google.com/)
 
 ### Media
+
+High quality images were sourved from the following pages:
+
+[Unsplash](https://unsplash.com/)
+[Pixabay](https://pixabay.com/)
+
+
 
 ### Acknowledgements
 
