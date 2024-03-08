@@ -6,7 +6,7 @@ The intended consumers of the information in this resource are students, whilst 
 
 The website features three sections: The home page takes users to posts on the subjects of wellness, the primary driver behind the initiative. A seperate food section features information available concerning healthy food in the immediate vicinity. A profiles session lists information about site contributors so that users can get to know those responsible for the site content and their background. 
 
-![Landing Page](https://github.com/Libbu/Full-Craic/blob/main/media/cleanlanding.jpg)
+![Landing Page](https://github.com/Libbu/Full-Craic/blob/main/media/deployedwithcards.JPG)
 
 
 ## UX
@@ -93,7 +93,7 @@ The sites navigation has been kept very simple to adhere to the Minimum Viable P
 
   - This section invites the user to delve more deeply into our content by clicking on the post card to read what our contributors have had to offer.
 
-IMAGE OF BLOG POST CARDS
+![Landing Page](https://github.com/Libbu/Full-Craic/blob/main/media/deployedwithcards.JPG)
 
 - __The Footer__ 
 
@@ -113,11 +113,12 @@ IMAGE OF BLOG POST CARDS
 ![Signin](https://github.com/Libbu/Full-Craic/blob/main/media/login.JPG)
 ![Signout](https://github.com/Libbu/Full-Craic/blob/main/media/signoutbutton.JPG)
 
-- __The Detail of Session, Food and Profile Posts__ 
+- __The Detail of Session and Profile Posts__ 
 
   - These are where the substance of our wellness content lies. An eye-catching header image encourages the viewer to read further, revealing new information about sessions on offer to them as well as the time and location of these. On Food and Meet the Team sections of the website, it is expected that these posts will contain information about healthy food offerings on campus, and contrinutors to our page content. 
 
-PICTURE OF AN ACTUAL POST HERE
+![Post Detail](https://github.com/Libbu/Full-Craic/blob/main/media/postdetail.JPG) 
+
 
 - __The Comment Box__ 
 
@@ -159,9 +160,15 @@ PICTURE OF AN ACTUAL POST HERE
 
 ![High Fi Landing](https://github.com/Libbu/Full-Craic/blob/main/media/hifidland.png) 
 
+![High Fi Landing](https://github.com/Libbu/Full-Craic/blob/main/media/himobilehomeheader.png) 
+
+![High Fi Landing](https://github.com/Libbu/Full-Craic/blob/main/media/himobilehome.png) 
+
 - __Desktop Post/Session Detail__
 
 ![High Fi Landing](https://github.com/Libbu/Full-Craic/blob/main/media/highfiddetailpost.png) 
+
+![High Fi Landing](https://github.com/Libbu/Full-Craic/blob/main/media/hipostdetail.png) 
 
 - __Registration Form__
 
@@ -214,6 +221,8 @@ It is our intention to carry out automated tests as part of routine app maintena
 
 1. As a **student** I can **browse wellbeing content** so that I can be **informed about what is available to me**.
 - The wellbeing section of our site displays on arrival and posts can be accessed by clicking on the relevant cards.
+
+
 
 2. As a **student** I can **register an account** so that I can **comment on posts**.
 - upon arriving at our website users are able to register accounts which grants them access to the facility to post comments in the wellbeing section.
