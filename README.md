@@ -213,6 +213,13 @@ Testing of site functionality was done manually during development and post depl
 
 It is our intention to carry out automated tests as part of routine app maintenance.
 
+- HTML
+
+Some errors in the HTML were found to be present:
+
+![HTML](https://github.com/Libbu/Full-Craic/blob/main/media/htmlerros.png)
+![HTML](https://github.com/Libbu/Full-Craic/blob/main/media/htmlerrors2.png)
+
 - CSS
 No errors were found when passing through [CSS Validation](https://jigsaw.w3.org/css-validator/)
 
