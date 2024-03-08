@@ -104,12 +104,18 @@ WSGI_APPLICATION = 'thrivingtogether.wsgi.application'
 # Database will use local sqlite in dev and elephantsql in prod
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+<<<<<<< HEAD
 if "debug in os.environ":
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+=======
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DB_URL'))
+>>>>>>> main
 }
 else:
     DATABASES = {
