@@ -17,6 +17,12 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                {% if "placeholder" in session.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                    alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src="{{ foodoffering.image.url }}" alt="{{ foodoffering.name }}">
+                                {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Provider: {{ foodoffering.provider }}</p>
                                 </div>
