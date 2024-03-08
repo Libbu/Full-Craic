@@ -213,10 +213,24 @@ Testing of site functionality was done manually during development and post depl
 
 It is our intention to carry out automated tests as part of routine app maintenance.
 
-- CSS
-  - No errors were found when passing through [CSS Validation](https://jigsaw.w3.org/css-validator/)
+- HTML
 
-  ![CSS](https://github.com/Libbu/Full-Craic/blob/main/media/csstest.png)
+Some errors in the HTML were found to be present:
+
+![HTML](https://github.com/Libbu/Full-Craic/blob/main/media/htmlerros.png)
+![HTML](https://github.com/Libbu/Full-Craic/blob/main/media/htmlerrors2.png)
+
+- CSS
+No errors were found when passing through [CSS Validation](https://jigsaw.w3.org/css-validator/)
+
+![CSS](https://github.com/Libbu/Full-Craic/blob/main/media/csstest.png)
+
+- JavaScript
+
+An Error was found when passing the JavaScript files through [JS Hint](https://jshint.com/) this pertained to a console log to check for connection which has been removed in deployment.
+
+![JS](https://github.com/Libbu/Full-Craic/blob/main/media/jetest1.png)
+![JS](https://github.com/Libbu/Full-Craic/blob/main/media/jetest2.png)
 
 
 ### Validating
@@ -226,16 +240,23 @@ It is our intention to carry out automated tests as part of routine app maintena
 1. As a **student** I can **browse wellbeing content** so that I can be **informed about what is available to me**.
 - The wellbeing section of our site displays on arrival and posts can be accessed by clicking on the relevant cards.
 
+![Landing Page](https://github.com/Libbu/Full-Craic/blob/main/media/deployedwithcards.JPG)
+
 
 
 2. As a **student** I can **register an account** so that I can **comment on posts**.
 - upon arriving at our website users are able to register accounts which grants them access to the facility to post comments in the wellbeing section.
+
+![Registration](https://github.com/Libbu/Full-Craic/blob/main/media/regform.JPG)
+![Signin](https://github.com/Libbu/Full-Craic/blob/main/media/login.JPG)
 
 - We do not feel that comment functionality needs to exist for the meet the team section and so it is not implemented.
 
 
 3. As a **therapist/instructor** I can **include a section about me** so that users can **learn more about who is writing the content**.
 - Site admins are able to post, edit and remove a profile to the "Meet the Team" section of the website. They can add an image to their profile which will display.
+
+![Landing Page](https://github.com/Libbu/Full-Craic/blob/main/media/meettheteam.JPG)
 
 
 4. As a **food vendor** I can **include posts about healthy eating options** so that **students are aware of their choices**.
@@ -245,6 +266,7 @@ It is our intention to carry out automated tests as part of routine app maintena
 5. As a **student** I **can leave comments** on the site to **engage with site-owners/confirm attendence**.
 - Students who have registered are able to leave comments under posts about wellbeing sessions. They can use these to confirm attendence, or simply to engage with the content.
 
+![Comment Box](https://github.com/Libbu/Full-Craic/blob/main/media/commentbox.JPG) 
 
 6. As a **therapist/instructor** I can **create posts** to the relevant section of the page **to share information with users**.
 -Therapists, Instructors and other site admins can create posts that publish to the wellbeing section of the website.
@@ -253,6 +275,7 @@ It is our intention to carry out automated tests as part of routine app maintena
 7. As a **site owner** I **want visitors to the page to see a list of linked social media accounts** so that they can **follow me on other platforms**.
 -A list of social media links display in the footer at the bottom of each page.
 
+![Footer](https://github.com/Libbu/Full-Craic/blob/main/media/footer.JPG)
 
 8. As a **student** I am able to **indicate what wellness content interests me** so that I can **receive information relevant to my interests**.
 -Due to prioritisation this feature is not ready for deployment at the time of writing. As development work has been underway on it, we hope to include it in a later release.
@@ -272,11 +295,11 @@ It is our intention to carry out automated tests as part of routine app maintena
 
 Moving forward we would like to see front-end functionality that allows recognition of user types and a user-friendly front-end for site admins from which they can write and post their content. 
 
-![fururelogin](https://github.com/Libbu/Full-Craic/blob/main/media/hipostdetail.png) 
+![fururelogin](https://github.com/Libbu/Full-Craic/blob/main/media/adminloginfrontend.png) 
 
 The Food section of the website is still in development and requires database work to complete. Currently we have a placeholder image conveying to users that they can expect some delicious content in the future.
 
-PLACEHOLDERFOODIMAGE
+![foodcoming](https://github.com/Libbu/Full-Craic/blob/main/media/foodcomingsoon.JPG) 
 
 ## Known Issues and Bugs
 
