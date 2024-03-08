@@ -12,7 +12,7 @@
                 <p class="post-subtitle">{{ session.provider }} | {{ session.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/loveyourself.jpg' %}" class="scale" alt="placeholder">
+                <img src="{{ session.image.url }}" class="scale" alt="placeholder">
             </div>
         </div>
     </div>
