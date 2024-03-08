@@ -1,7 +1,7 @@
 /* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&family=Italiana:wght@200;300;400;500;600;700&display=swap');
 
-/* homepage /landing design */
+/* General styling */
 
 html,
 body {
@@ -12,7 +12,6 @@ body {
     overflow-x: hidden;
     background-color: #FFE6E8;
     margin-bottom: 0;
-    /* Set margin-bottom to 0 */
     background-image: url('/static/images/fengshui.jpg');
     background-size: cover;
     background-position: center center;
@@ -21,6 +20,7 @@ body {
 
 .display-4 {
     color: #817C68;
+
 }
 
 /* Navbar */
@@ -49,7 +49,6 @@ div.container-fluid.navalert-container {
     width: 100%;
     background-color: #817C68;
     z-index: 1000;
-   
 }
 
 .navbar .navbar-toggler {
@@ -184,7 +183,6 @@ footer {
     color: #ffe6e8;
     margin-top: 75vh;
     padding: 20px 0;
-    /* Adjusted padding */
     height: auto;
 }
 
@@ -238,10 +236,16 @@ footer {
     transform: translate(-50%, -50%);
 }
 
+.merged-text {
+    color: #fff; /* Set the text color */
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity */
+    padding: 20px; /* Adjust the padding as needed */
+    border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+}
+
 /* Title Header and Food Offerings */
 .container-fluid {
     padding-top: 20px;
-    /* Adjust as needed */
 }
 
 .card-body {
@@ -257,53 +261,16 @@ footer {
     padding: 115px;
 }
 
-/* Form Styling */
-form {
-    background-color: #817C68;
-    padding: 20px;
-    border-radius: 11px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 1.1);
-    width: 90vw;
-}
-
-#commentForm {
-    width: 12vw;
-    color: #817C68;
-}
-
-.page-link {
-    background-color: transparent;
-}
-
-.login-form {
+/* Common form styling */
+.form-container {
     background-color: #817C68;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 1.1);
     width: 15vw;
-    /* Adjust the max-width as needed */
     margin: 10vh auto;
-    /* Center the form horizontally */
 }
 
-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #817C68;
-}
-
-form input,
-form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: white;
-}
-
-form button {
+.form-container button {
     background-color: #817c68;
     color: #CDc8BD;
     padding: 12px 20px;
@@ -312,68 +279,37 @@ form button {
     cursor: pointer;
 }
 
-form button:hover {
+.form-container button:hover {
     background-color: orange;
 }
-
-form .errorlist {
-    color: #ff0000;
-    margin: 0 0 10px;
-}
-
-/* Media Queries */
 
 /* Larger screens */
 @media screen and (min-width: 992px) {
     .masthead {
         height: 40vh;
-        /* Adjust the height as needed */
     }
 
     .masthead-text {
         width: 60%;
-        /* Adjust the width as needed */
     }
 
     .masthead-image {
         width: 40%;
-        /* Adjust the width as needed */
     }
 
     .card {
         min-height: 400px;
-        /* Adjust the min-height as needed */
     }
 
-    .login-form {
+    .form-container {
         width: 20vw;
-        /* Adjust the width as needed */
-    }
-
-    .signup-form {
-        width: 25vw;
-        /* Adjust the width as needed */
-    }
-    .form button {
-        background-color: #817c68; 
-        color: #CDc8BD;
-        padding: 12px 20px;
-        border-color: #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    
-    .form button:hover {
-        background-color: orange;
     }
 }
-
 
 /* Medium screens */
 @media screen and (max-width: 991px) {
     .masthead {
         height: 30vh;
-        /* Adjust the height as needed */
     }
 
     .masthead-text {
@@ -382,43 +318,21 @@ form .errorlist {
 
     .masthead-image {
         display: none;
-        /* Hide the image on medium screens */
     }
 
     .card {
         min-height: 300px;
-        /* Adjust the min-height as needed */
     }
 
-    .login-form {
-        width: 40vw;
-        /* Adjust the width as needed */
-    }
-
-    .signup-form {
-        width: 40vw;
-        /* Adjust the width as needed */
-    }
-
-    .form button {
-        background-color: #817c68; 
-        color: #CDc8BD;
-        padding: 12px 20px;
-        border-color: #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    
-    .form button:hover {
-        background-color: orange;
+    .form-container {
+        width: 60vw;
     }
 }
 
 /* Small screens */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 375px) and (orientation: landscape) {
     .masthead {
         height: 40vh;
-        /* Adjust the height as needed */
     }
 
     .masthead-text {
@@ -427,58 +341,33 @@ form .errorlist {
 
     .masthead-image {
         display: none;
-        /* Hide the image on small screens */
     }
-    /*food hero image*/
+
+    .hero-content {
+        width: 100%; /* Full width for landscape mode */
+    }
+
     .hero-section img {
-        max-width: 100vw;
-        margin-top: -20vh;
-        margin-bottom: -63px;
-        padding: 74px;
+        width: 100%;
+        margin-top: 10vh;
+        margin-bottom: 0px;
+        padding: 0px;
     }
 
     .card {
         min-height: 200px;
-        /* Adjust the min-height as needed */
     }
 
     .comments {
         padding: 10px;
-        /* Adjust the padding for comments on small screens */
     }
 
     .approval {
         font-size: 12px;
-        /* Adjust the font size for approval text on small screens */
     }
 
-    #commentForm {
-        width: 71vw;
+    .form-container {
+        width: 50vw;
+        max-width: none;
     }
-
-    .login-form {
-        width: 70vw;
-        /* Adjust the width as needed */
-    }
-
-    .signup-form {
-        width: 90vw;
-        padding:0
-        /* Adjust the width as needed */
-    }
-
-    .form button {
-        background-color: #817c68; 
-        color: #CDc8BD;
-        padding: 12px 20px;
-        border-color: #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-        max-width: 135vw;
-    }
-    
-    .form button:hover {
-        background-color: orange;
-    }
-
 }
