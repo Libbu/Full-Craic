@@ -3,53 +3,52 @@
 
 {% block content %}
 
-<!-- profiles_landingpage.html content starts here -->
-<div class="container-fluid">
+<!-- Rating Section -->
+<div class="container-fluid rating-section">
     <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for profile in object_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ profile.firstname}}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'profile_detail' profile.slug %}" class="post-link">
-                                <h2 class="card-title">{{ profile.firstname }}</h2>
-                            </a>
-
-                            <hr />
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
-            </div>
+        <div class="col-md-12 text-center">
+            <h1 class="display-4">Rate Our Profiles</h1>
+            <p class="lead">Share your thoughts and experiences with our profiles</p>
+            <!-- Add your rating form or other content here -->
         </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo PREV</a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
 </div>
 
-<!-- profiles_landingpage.html content ends here -->
+<!-- Placeholder Profiles -->
+<div class="container-fluid">
+    <div class="row">
+        {% for _ in "123" %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                        <img src="{% static '/images/janedoe.jpg' %}" alt="Profile Image" class="img-fluid">
+                        <div class="image-flash">
+                            <p class="author">Jane doe {{ forloop.counter }}</p>
+                        </div>
+                    </div>
+                    <a href="#" class="post-link">
+                        <h2 class="card-title">Jane Doe {{ forloop.counter }}</h2>
+                    </a>
+                    <hr />
+                    <p class="card-text text-muted h6">Joined: Placeholder Date</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 {% endblock %}

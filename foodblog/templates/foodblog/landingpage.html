@@ -3,12 +3,21 @@
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static '/images/fenshui.JPG' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'path/to/styles.css' %}">
 
-<!-- index.html content starts here -->
+<!-- Hero Section -->
+<div class="hero-section">
+    <img src="{% static '/images/healthymeal.jpg' %}" alt="Hero Image" class="img-fluid">
+    <div class="hero-content">
+        <h1 class="display-4 text-center" style="background-color: rgba(255, 255, 255, 0.9)">Welcome to My Food Blog</h1>
+        
+        <!-- Add ratings or any other content here -->
+    </div>
+</div>
+
+<!-- Food Offerings -->
 <div class="container-fluid">
     <div class="row">
-
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">

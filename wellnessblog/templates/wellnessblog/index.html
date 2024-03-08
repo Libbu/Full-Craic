@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" type="text/css" href="{% static '/images/fenshui.JPG' %}">
 
-<div class="jumbotron jumbotron-fluid landing-page">
+<div class="jumbotron jumbotron-fluid landing-page text-center" style="background-color: rgba(255, 255, 255, 0.8);">
   <div class="container">
     <h1 class="display-4">Welcome To Tranquility</h1>
     <p class="lead">Explore our sessions and join our ever-growing community.</p>
@@ -14,15 +14,16 @@
 
 <!-- index.html content starts here -->
 <div class="container-fluid">
+
   <div class="row">
 
     <!-- Blog Entries Column -->
-    <div class="col-12 mt-3 left">
-      <div class="row">
+    <div class="col-12 mt-3 left" >
+      <div class="row" >
         {% for session in object_list %}
         <div class="col-md-4">
           <div class="card mb-4">
-            <div class="card-body">
+            <div class="card-body" >
               <div class="image-container">
                 <div class="image-flash">
                   <p class="author">Provider: {{ session.provider }}</p>
@@ -38,8 +39,8 @@
           </div>
         </div>
         {% if forloop.counter|divisibleby:3 %}
-        </div>
-        <div class="row">
+      </div>
+      <div class="row">
         {% endif %}
         {% endfor %}
       </div>
