@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from .models import Session, Comment, UserProfile
 from .forms import CommentForm
@@ -73,6 +75,22 @@ def comment_edit(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('session_detail', args=[slug]))
 
+def comment_delete(request, slug, comment_id):
+    """
+    view to delete comment
+    """
+    queryset = Session.objects.filter(status=1)
+    post = get_object_or_404(queryset, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if comment.user == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+
+    return HttpResponseRedirect(reverse('session_detail', args=[slug]))
+
 
 def user_profile_detail(request, user_profile_id):
     user_profile = get_object_or_404(UserProfile, pk=user_profile_id)
@@ -97,3 +115,19 @@ def create_session(request):
     else:
         form = SessionForm()
     return render(request, 'create_session.html', {'form': form})
+
+# @csrf_exempt  # For simplicity, you can remove this decorator if you're using CSRF protection
+def update_rating(request):
+    if request.method == 'POST' and request.is_ajax():
+        rating = request.POST.get('rating')  # Assuming rating is sent as POST data
+        comment_id = request.POST.get('comment_id')  # Assuming you also send comment_id to identify the comment
+        
+        try:
+            comment = Comment.objects.get(pk=comment_id)
+            comment.stars = rating
+            comment.save()
+            return JsonResponse({'message': 'Rating updated successfully'})
+        except Comment.DoesNotExist:
+            return JsonResponse({'error': 'Comment not found'}, status=404)
+    else:
+        return JsonResponse({'error': 'Invalid request'}, status=400)
