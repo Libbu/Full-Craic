@@ -170,8 +170,6 @@ The sites navigation has been kept very simple to adhere to the Minimum Viable P
 
 ![High Fi Landing](https://github.com/Libbu/Full-Craic/blob/main/media/hipostdetail.png) 
 
-- __Registration Form__
-
 
 ## Surface
 
