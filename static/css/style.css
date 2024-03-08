@@ -169,7 +169,16 @@ div.container-fluid.navalert-container {
     color: lightgray;
 }
 
-/* Footer */
+/* Star Rating Styles */
+.fa {
+    font-size: 25px;
+  }
+  
+.checked {
+    color: goldenrod;
+}
+
+/*------------------------------- Footer */
 footer {
     background-color: #817C68;
     color: #ffe6e8;
