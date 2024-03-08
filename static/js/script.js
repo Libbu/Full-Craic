@@ -1,5 +1,3 @@
-/* Confirm script.js connected */
-console.log('script.js connected')
 
 /* Star Rating System */
 function rateSession(element) {

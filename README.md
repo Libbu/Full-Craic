@@ -218,7 +218,7 @@ It is our intention to carry out automated tests as part of routine app maintena
 2. As a **student** I can **register an account** so that I can **comment on posts**.
 - upon arriving at our website users are able to register accounts which grants them access to the facility to post comments in the wellbeing section.
 
-- At the time of writing comments are not open on all posts in the Food however we are considering this for a future release. We do not feel that comment functionality needs to exist for the meet the team section.
+- We do not feel that comment functionality needs to exist for the meet the team section and so it is not implemented.
 
 3. As a **therapist/instructor** I can **include a section about me** so that users can **learn more about who is writing the content**.
 - Site admins are able to post, edit and remove a profile to the "Meet the Team" section of the website. They can add an image to their profile which will display.
@@ -246,21 +246,49 @@ It is our intention to carry out automated tests as part of routine app maintena
 
 ### Features For Future Implementation
 
+- User Types
 
+Moving forward we would like to see front-end functionality that allows recognition of user types and a user-friendly front-end for site admins from which they can write and post their content. 
+
+ADMIN LOGIN WIREFRAME
+
+The Food section of the website is still in development and requires database work to complete. Currently we have a placeholder image conveying to users that they can expect some delicious content in the future.
+
+PLACEHOLDERIMAGE
 
 ## Known Issues and Bugs
 
+On desktop our signout button is currenly stretching to the left. 
+
+STRETCHY BUTTON PICTURE
+
+Currently the edit functionality does not work on comments. Posts made my site admins have full CRUD functionality.
+
 ## Deployment
+
+The website has been deployed through Heroku.
+
+The live website can be found here:
+
+LINK
 
 ## Credits 
 
 ### Content
 
+Bootstrap 4 was used to assist in the structure and layout of the page.
+
+Content from Code Institute's LMS modules were used for standard code across all pages of the app. 
+
+Back-end functionality is heavily inspired by CodeInstitute walkthrough project: I Think Therefore I Blog
+
+[Font Awesome](https://fontawesome.com/) was used across all pages for social media link icons.
+
+Fonts are from [Google Fonts](https://fonts.google.com/)
+
 ### Media
 
 ### Acknowledgements
-
-Back-end functionality is heavily inspired by CodeInstitute walkthrough project: I Think Therefore I Blog
 
 Further assistance gratefully received from CI tutors Iris, Kevin and Martin, and the wider CI slack community.
 
