@@ -232,6 +232,10 @@ An Error was found when passing the JavaScript files through [JS Hint](https://j
 ![JS](https://github.com/Libbu/Full-Craic/blob/main/media/jstest1.png)
 ![JS](https://github.com/Libbu/Full-Craic/blob/main/media/jetest2.png)
 
+- Lighthouse
+
+
+
 
 ### Validating
 
@@ -309,13 +313,13 @@ On desktop our signout button is currenly stretching to the left.
 
 Currently the edit functionality does not work on comments. Posts made my site admins have full CRUD functionality.
 
+The lighthouse rating of site load is lower than we would like it to be, this is due to not having image compression functionality enabled. It is therefore important that site admins optimise their images for the web in future as until compression functionality exists this will reduce load times.
+
 ## Deployment
 
 The website has been deployed through Heroku.
 
-The live website can be found here:
-
-LINK
+The live website can be found [here](https://full-craic-thriving-together-79b263f6f64f.herokuapp.com/)
 
 ## Credits 
 
